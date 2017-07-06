@@ -126,7 +126,7 @@
 		</style>
 	</head>
 
-	<body>
+	<body spellcheck="false">
 
 		<div class="video-wrapper">
 			<video autoplay loop>
@@ -158,20 +158,20 @@
 				return params;
 			}
 
-			let params = getQueryParams(document.location.search);
-			let link = 'https://student.desmos.com?prepopulateCode=' + params.code;
-			let desmos = document.getElementById('desmos');
+			var params = getQueryParams(document.location.search);
+			var link = 'https://student.desmos.com?prepopulateCode=' + params.code;
+			var desmos = document.getElementById('desmos');
 			desmos.setAttribute('href', link);
 			if(params.name){
-				let name = document.getElementById('name');
+				var name = document.getElementById('name');
 				name.innerText = params.name;
 			}
 
-			let format = 'hh:mm:ss A';
-			let time = document.getElementById('time');
-			setInterval(() => {
-				let now = new Date().getTime();
-				let str = moment(now).format(format);
+			var format = 'hh:mm:ss A';
+			var time = document.getElementById('time');
+			setInterval(function(){
+				var now = new Date().getTime();
+				var str = moment(now).format(format);
 				time.innerText = str;
 			}, 1000);
 
